@@ -1,0 +1,34 @@
+Explicação do Componente App:
+
+O componente App é o componente principal que organiza a estrutura básica da aplicação. Aqui está uma explicação detalhada do código:
+
+import React from 'react';:
+Importa a biblioteca React, que é essencial para criar componentes React.
+import {BrowserRouter} from 'react-router-dom';:
+Importa o componente BrowserRouter da biblioteca react-router-dom. Este componente envolve a aplicação, permitindo a navegação com base nas URLs.
+import Header from './Header';:
+Importa o componente Header do arquivo Header.js. Este componente representa o cabeçalho da aplicação.
+import Footer from './Footer';:
+Importa o componente Footer do arquivo Footer.js. Este componente representa o rodapé da aplicação.
+import RotasApp from './RotasApp';:
+Importa o componente RotasApp do arquivo RotasApp.js. Este componente contém as definições das rotas da aplicação.
+function App() { ... }:
+Define a função do componente App.
+<div className="d-flex flex-column min-vh-100">:
+Uma div com classes do Bootstrap (d-flex, flex-column, min-vh-100) que aplica estilos para criar um layout flexível de coluna que ocupa pelo menos a altura total da viewport.
+<BrowserRouter>:
+Abre o componente BrowserRouter, que envolve o conteúdo da aplicação. Ele permite que os componentes filhos tenham acesso às informações da rota.
+<Header />:
+Renderiza o componente Header. Este componente representa o cabeçalho da aplicação, que geralmente contém elementos de navegação, título, etc.
+<RotasApp/>:
+Renderiza o componente RotasApp. Este componente contém a definição das rotas da aplicação usando o React Router.
+</BrowserRouter>:
+Fecha o componente BrowserRouter.
+<Footer />:
+Renderiza o componente Footer. Este componente representa o rodapé da aplicação.
+</div>:
+Fecha a div principal.
+export default App;:
+Exporta o componente App para que possa ser utilizado em outros arquivos.
+Resumo:
+O componente App serve como o ponto de entrada principal para a aplicação React. Ele organiza a estrutura básica da página, incluindo o cabeçalho, as rotas e o rodapé. O uso do BrowserRouter permite a navegação baseada em URLs, enquanto os componentes Header, RotasApp e Footer contribuem para diferentes partes da interface do usuário.

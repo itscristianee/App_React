@@ -1,0 +1,27 @@
+Você tem aqui um componente Marcacao em React que lida com o agendamento de marcações e exibe a tabela de marcações existentes.
+
+Vou destacar algumas partes do seu código:
+
+Estado Inicial:
+Você definiu um estado inicial no construtor do componente, que inclui propriedades como idOpcao, opcao, data, hora, prestacoes, Clientes, marcacao, nome, email, telefone, e idCliente.
+componentDidMount:
+No método componentDidMount, você chama três funções assíncronas para buscar dados das API de prestacoes, clientes, e marcacoes assim que o componente é montado.
+Funções de Busca:
+buscarPrestacoes: Busca as informações sobre as prestações.
+buscarClientes: Busca as informações sobre os clientes.
+buscarMarcacao: Busca as informações sobre as marcações existentes.
+Funções de Cadastro:
+cadastraCliente: Cadastra um novo cliente.
+cadastraMarcacao: Cadastra uma nova marcação.
+Manipulação de Formulário:
+handleChange: Atualiza o estado com os valores dos campos do formulário.
+handleDropdownSelect: Atualiza o estado com a opção selecionada no Dropdown.
+Renderização de Formulário:
+renderForm: Renderiza um formulário para fazer a marcação, incluindo campos para nome, email, telefone, opção de prestação, data e hora.
+Renderização da Tabela de Marcações:
+renderTabela: Renderiza uma tabela mostrando as marcações existentes, incluindo informações como cliente, prestação, data e hora.
+Funções de Eliminação:
+eliminarCliente: Remove um cliente existente.
+eliminarMarcacao: Remove uma marcação existente, chamando eliminarCliente para remover também o cliente associado à marcação.
+Renderização do Componente:
+Você está usando react-bootstrap para renderizar o formulário e a tabela em abas.

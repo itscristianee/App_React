@@ -1,0 +1,7 @@
+NavBar Component - Primeira Parte:
+O componente NavBar é responsável por criar a estrutura inicial da barra de navegação. Ele utiliza o componente Navbar da biblioteca React Bootstrap para estilizar e organizar a barra. Dentro desse Navbar, é incluída uma imagem de logotipo (Logo2.png) alinhada à esquerda. O logotipo é exibido com dimensões de 30x30 pixels. O texto "Its Cristianee" é exibido ao lado do logotipo. Essa parte cria uma barra de navegação simples com um logotipo e texto.
+
+NavBar Component - Segunda Parte:
+A segunda parte do componente NavBar expande suas funcionalidades para oferecer uma experiência de navegação mais completa. Adiciona um botão de alternância (geralmente visível em dispositivos móveis) para expandir ou recolher os itens de navegação. Inclui uma variedade de links de navegação, como "Home" e "Link". Além disso, há um menu suspenso ("Dropdown") que fornece opções adicionais quando acionado. Esse aprimoramento é especialmente útil para tornar a barra de navegação mais amigável em dispositivos móveis, mantendo a navegação organizada.
+
+Essas duas partes combinadas formam um componente NavBar que pode ser integrado em uma aplicação React para facilitar a navegação do usuário.

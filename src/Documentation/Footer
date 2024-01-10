@@ -1,0 +1,21 @@
+Explicação do Componente Footer:
+
+O componente Footer representa o rodapé (footer) de uma página web e inclui informações sobre a empresa, links adicionais e uma seção de navegação. Aqui está uma explicação detalhada do código:
+
+Elemento footer:
+É a tag principal do rodapé, usando a classe "footer" para estilização.
+As classes mt-auto e py-3 são utilizadas para garantir espaço adequado e preenchimento vertical.
+div com a classe "container":
+Contém o conteúdo do rodapé e utiliza a classe "container" para controlar o layout responsivo.
+Outro elemento footer:
+Outra tag footer é utilizada para criar uma seção flexível (d-flex) com determinado espaçamento e alinhamento entre itens (justify-content-between align-items-center).
+div com a classe "col-md-4":
+Uma div com a classe "col-md-4" é utilizada para criar uma coluna com tamanho específico em dispositivos de médio porte (md).
+Contém um link para a página inicial ("/") com o logotipo do Bootstrap e um texto indicando a empresa e o ano de copyright.
+div com links adicionais:
+Uma div contém links adicionais para páginas como "Privacy Policy" e "Contact Us".
+Links "Privacy Policy" e "Contact Us":
+São links que direcionam para as páginas de política de privacidade e contato, respectivamente.
+Utilizam a classe "text-muted" para estilização, indicando que são links de texto não enfatizados.
+Resumo:
+O componente Footer fornece um rodapé básico para a página, exibindo informações sobre a empresa, links adicionais e uma área de navegação. O uso de classes Bootstrap ajuda na estilização e na criação de um layout responsivo. O rodapé é estruturado de forma a ser flexível e fácil de manter.

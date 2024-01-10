@@ -1,0 +1,28 @@
+Classe Home:
+A classe Home é declarada, estendendo a classe Component do React. Ela representa o componente responsável pela página inicial da aplicação.
+
+Estado Inicial:
+O estado inicial do componente é definido no construtor da classe. Ele inclui propriedades como idTipo, id, tipo, preco, imagem, prestacoes (array para armazenar dados de prestações), pedidos (array para armazenar dados de pedidos), showModal (indica se o modal está aberto), idCliente, nome, email, telefone, opcao, data, e hora.
+
+Ciclo de Vida:
+O método componentDidMount é utilizado para buscar as prestações e pedidos quando o componente é montado.
+
+Métodos de Busca de Dados:
+buscarPrestacoes: Realiza uma requisição à API para buscar prestações e atualiza o estado com os dados obtidos.
+buscarPedido: Realiza uma requisição à API para buscar pedidos e atualiza o estado com os dados obtidos.
+Métodos de Cadastro de Pedido:
+cadastrarPedido: Cadastra um novo pedido utilizando o método HTTP POST. Os detalhes do pedido são extraídos do estado e enviados para a API.
+Métodos de Renderização:
+renderPrestacoes: Renderiza as prestações obtidas do estado em forma de cartões. Cada cartão possui uma imagem, título, preço e botão para marcar o pedido.
+Carrossel: Renderiza um carrossel de imagens utilizando o componente Carousel do React Bootstrap.
+Métodos de Atualização do Estado:
+handleChange: Atualiza o estado com os valores dos campos do formulário.
+Método de Marcação de Pedido:
+Marcar: Atualiza o estado com informações do tipo de prestações selecionado.
+Método de Renderização do Formulário:
+renderForm: Renderiza um formulário para a realização de um pedido. Os campos incluem nome, email, telefone, tipo de prestações escolhido, data e hora.
+Método de Pedido:
+pedido: Atualiza o estado para exibir o modal de pedido ao ser clicado.
+Método render:
+Renderiza o carrossel, prestações e o modal de pedido. O modal só é exibido quando a propriedade showModal é verdadeira.
+Esse código estrutura claramente as funcionalidades da página inicial, tornando-o compreensível e modular.

@@ -1,0 +1,48 @@
+Explicação Detalhada do Componente Prestacao:
+
+O componente Prestacao é um componente React que gerencia a exibição e manipulação de dados relacionados às prestações de serviços. Aqui está uma explicação detalhada do código:
+
+Estado Inicial:
+O componente possui um estado inicial definido no construtor, que inclui propriedades como id, tipo, preco, imagem, prestacoes (array para armazenar as prestações obtidas da API), modalAberto (indica se o modal está aberto), e pastaIdGoogleDrive.
+ComponentDidMount:
+O método componentDidMount é chamado após o componente ser montado. Nesse caso, ele chama a função buscarPrestacoes para obter as prestações da API e atualizar o estado.
+Função buscarPrestacoes:
+Utiliza a função fetch para obter dados da API.
+Atualiza o estado prestacoes com os dados obtidos.
+Função carregarDados:
+Recebe um id como parâmetro.
+Utiliza a função fetch para obter os dados de uma prestação específica com o ID fornecido.
+Atualiza o estado com os dados da prestação obtidos.
+Função renderPrestacoes:
+Mapeia as prestações no estado e cria cards para cada uma delas.
+Cada card exibe informações como tipo, preço, imagem, e botões de edição/exclusão.
+Ao clicar nos botões, são chamadas as funções abrirModal e eliminarPrestacao respectivamente.
+Função cadastraPrestacao:
+Envia uma requisição POST para a API para cadastrar uma nova prestação.
+Atualiza o estado com a nova prestação adicionada.
+Função eliminarPrestacao:
+Recebe um id como parâmetro.
+Envia uma requisição DELETE para a API para excluir uma prestação.
+Atualiza o estado excluindo a prestação com o ID correspondente.
+Funções abrirModal e fecharModal:
+Atualizam o estado modalAberto para controlar a abertura e o fechamento do modal.
+Função renderFormulario:
+Renderiza um modal para adicionar ou editar prestações.
+Inclui campos para inserir tipo, preço e imagem.
+Utiliza uma função Enviar para processar o envio do formulário.
+Funções atualizaTipo, atualizaPreco, atualizaImagem:
+Atualizam o estado com os valores dos campos do formulário.
+Função Enviar:
+Processa o envio do formulário, decide se é uma criação ou atualização com base no ID.
+Envia requisição POST ou PUT para a API, conforme necessário.
+Fecha o modal e reseta o estado após a conclusão.
+Funções Reset e atualizarPrestacao:
+Reset redefine o estado para valores padrão.
+atualizarPrestacao envia uma requisição PUT para atualizar uma prestação existente.
+Funções handleImageUpload e convertImageToBase64:
+handleImageUpload lida com o upload de uma imagem.
+convertImageToBase64 converte uma imagem para base64.
+Renderização:
+Renderiza um botão para adicionar uma nova prestação.
+Renderiza o modal e as prestações usando as funções mencionadas anteriormente.
+Este componente é destinado a gerenciar o CRUD (Create, Read, Update, Delete) das prestações, fornecendo uma interface para interação com o usuário.

@@ -1,0 +1,14 @@
+Vamos analisar algumas partes importantes do código:
+
+Importações:
+Você importou React e os componentes que serão renderizados em cada rota, como Home, Sobre, Cliente, Marcar, e Prestacao.
+Importou os componentes Routes e Route do react-router-dom.
+Definição de Rotas:
+Utiliza o componente <Routes> para envolver todas as rotas.
+Cada <Route> é definido com um path (caminho da URL) e um element (componente a ser renderizado).
+Rotas Específicas:
+Route para a raiz ("/") que renderiza o componente <Home />.
+Route para "/sobre" que renderiza o componente <Sobre />.
+Route para "/clientes" que renderiza o componente <Cliente />.
+Route para "/marcar" que renderiza o componente <Marcar />.
+Route para "/prestacao" que renderiza o componente <Prestacao />.
