@@ -1,0 +1,27 @@
+Documentação do Componente Header
+
+Visão Geral
+O componente Header atua como o cabeçalho da aplicação, fornecendo links de navegação e funcionalidades de autenticação do usuário. Esta documentação fornece uma explicação detalhada da estrutura, propósito e uso do componente.
+
+Estrutura
+O componente Header é estruturado da seguinte forma:
+
+Estado Inicial:
+O componente inicializa seu estado para gerenciar a visibilidade de diferentes seções (showClient, showMarcacoes, showPrestacoes), o status de login do usuário (isLoggedIn) e credenciais do usuário (username, password). O array users armazena dados recuperados da API.
+componentDidMount e buscarUsers:
+O método de ciclo de vida componentDidMount chama a função buscarUsers, que busca dados do usuário na API durante a inicialização do componente.
+Métodos de Gerenciamento de Estado:
+Vários métodos lidam com atualizações de estado, como handleLoginClick para autenticação do usuário, handleLogout para logout do usuário e handleInputChange para lidar com alterações de entrada.
+Formulário de Login:
+O método login renderiza condicionalmente um formulário de login com base no status de login do usuário. Inclui campos para nome de usuário e senha.
+Renderização de Seções Condicionais:
+A navegação exibe diferentes seções de forma condicional com base no status de login do usuário (showClient, showMarcacoes, showPrestacoes).
+Interação com a API:
+O componente interage com a API para obter dados do usuário e os utiliza para validar as credenciais de login do usuário.
+Feedback ao Usuário:
+O componente fornece feedback ao usuário para eventos importantes, como login bem-sucedido, falha no login e logout.
+Estilização:
+Bootstrap é utilizado para estilização, garantindo uma aparência consistente e responsiva.
+
+Conclusão
+O componente Header aprimora a experiência do usuário fornecendo navegação intuitiva e um mecanismo de login/logout sem interrupções, tornando-o um elemento crucial da aplicação.

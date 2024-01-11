@@ -12,35 +12,43 @@ class Header extends Component {
     isLoggedIn: false,
     username: '',
     password: '',
-    users:[]
+    users: []
   };
   componentDidMount() {
     this.buscarUsers();
-    
 
-}
-    // Método para buscar os Clientes da API
-    buscarUsers = () => {
-      let url = 'https://api.sheety.co/1e2a5eeec0d760ba3c1d396e48fc8e4b/login/login';
-      fetch(url)
-          .then((response) => response.json())
-          .then(data => {
-              if (data && data.login) {
-                  console.log(data); // Adicione este console.log para visualizar os dados retornados pela API
+  }
+  // Método para buscar os Clientes da API
+  buscarUsers = () => {
+    let url = 'https://api.sheety.co/1e2a5eeec0d760ba3c1d396e48fc8e4b/login/login';
+    fetch(url)
+      .then((response) => response.json())
+      .then(data => {
+        if (data && data.login) {
+          console.log(data); // Adicione este console.log para visualizar os dados retornados pela API
 
-                  // Atualiza o estado do componente com os dados dos Clientes recebidos da API
-                  this.setState({ users: data.login });
-              }
-          })
-          .catch(error => {
-              console.error('Erro ao buscar os dados dos Clientes:', error);
-          });
-  } 
+          // Atualiza o estado do componente com os dados dos Clientes recebidos da API
+          this.setState({ users: data.login });
+        }
+      })
+      .catch(error => {
+        console.error('Erro ao buscar os dados dos Clientes:', error);
+      });
+  }
   handleLoginClick = () => {
     const { username, password, users } = this.state;
 
-    // Verifica se o username e a senha correspondem a algum usuário no array
-    const isValidLogin = users.some(user => user.username === username && user.password === password);
+    // Check if username and password are not empty
+    if (!username.trim() || !password.trim()) {
+      console.error('Username e password são necessários');
+      this.setState({ error: 'Username and password são necessários' });
+      return;
+    }
+
+    // Convert the entered password to a number
+    const enteredPasswordNumber = parseInt(password, 10);
+
+    const isValidLogin = users.some(user => user.username === username && user.password === enteredPasswordNumber);
 
     if (isValidLogin) {
       this.setState({
@@ -48,10 +56,11 @@ class Header extends Component {
         showClient: true,
         showPrestacoes: true,
         isLoggedIn: true,
+        error: '', // Clear any previous error
       });
     } else {
-      // Handle login inválido
       console.error('Login failed');
+      this.setState({ error: 'Invalido username ou password' });
     }
   };
 
@@ -64,13 +73,22 @@ class Header extends Component {
     });
   };
 
-  handleInputChange = event => {
+  handleInputChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
+      error: '', // Clear any previous error when the user types
     });
   };
 
+
   login = () => {
+    const { isLoggedIn } = this.state;
+
+    // If already logged in, don't render the form
+    if (isLoggedIn) {
+      return null;
+    }
+
     return (
       <Form onSubmit={this.handleLoginClick}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -95,14 +113,12 @@ class Header extends Component {
           />
         </Form.Group>
 
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
       </Form>
     );
   };
 
-render() {
+
+  render() {
     const { showClient, showMarcacoes, showPrestacoes, isLoggedIn } = this.state;
 
     return (
@@ -143,9 +159,15 @@ render() {
                 onClick={isLoggedIn ? this.handleLogout : this.handleLoginClick}
               >
                 {isLoggedIn ? 'Logout' : 'Login'}
+                {this.state.error && <div className="text-danger">{this.state.error}</div>}
               </Button>
             </Link>
+
+            {this.login()} {/* Render the login form */}
           </div>
+
+
+
         </Container>
       </header >
     );

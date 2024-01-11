@@ -108,7 +108,13 @@ class Marcacao extends Component {
                 this.setState(prevState => ({
                     Clientes: [...prevState.Clientes, { ...cliente, idCliente: responseData.cliente.id }]
                 }));
-                
+                console.log('o id pra controlar', responseData.cliente.id);
+                // Em algum lugar do seu código onde você chama cadastraMarcacao
+                const { idOpcao, data, hora } = this.state;
+                this.cadastraMarcacao(responseData.cliente.id, idOpcao, data, hora);
+
+
+
             })
             .catch(error => {
                 console.error('Erro ao cadastrar cliente:', error);
@@ -164,9 +170,6 @@ class Marcacao extends Component {
         };
         this.cadastraCliente(cliente); // Chama a função para cadastrar o cliente
 
-        // Em algum lugar do seu código onde você chama cadastraMarcacao
-        const { idCliente, idOpcao, data, hora } = this.state;
-        this.cadastraMarcacao(idCliente, idOpcao, data, hora);
 
 
     };
@@ -195,7 +198,7 @@ class Marcacao extends Component {
         return (
             <div className="container">
                 <h1>Fazer Marcação</h1>
-                <Form onSubmit={this.handleSubmit}>
+                <Form >
                     <FormGroup className="mb-3">
                         <FormLabel>Nome:</FormLabel>
                         <FormControl
@@ -258,7 +261,7 @@ class Marcacao extends Component {
                         />
                     </FormGroup>
                     <FormGroup className="mb-3">
-                        <Button variant="primary" type="submit">Validar</Button>
+                        <Button variant="primary" type="submit" onClick={this.handleSubmit}>Validar</Button>
                         <Button variant="secondary" type="reset">Cancelar</Button>
                     </FormGroup>
                 </Form>
@@ -319,7 +322,7 @@ class Marcacao extends Component {
                     const novosClientes = this.state.Clientes.filter(Cliente => Cliente.id !== id);
                     // Atualiza o estado com a nova lista de Clientes
                     this.setState({ Clientes: novosClientes });
-                    alert("Registro excluído!")
+                    
                 }
             })
             .catch(error => {
